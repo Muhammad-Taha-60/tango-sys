@@ -102,7 +102,7 @@ const Contact = () => {
                     href="mailto:hello@tangosystems.io"
                     className="text-white hover:text-tango transition-colors duration-300"
                   >
-                    hello@tangosystems.io
+                    tangosys786@gmail.com
                   </a>
                 </div>
               </div>
@@ -122,7 +122,7 @@ const Contact = () => {
 
             {/* CTA Button */}
             <a
-              href="mailto:hello@tangosystems.io?subject=Discovery%20Call%20Request"
+              href="mailto:tangosys786@gmail.com?subject=Discovery%20Call%20Request"
               className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-tango hover:bg-tango-dark text-white font-medium rounded-full transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5 group"
             >
               Book a discovery call
