@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 213 72% 14%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 220 20% 94%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 2 100% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 16% 88%;
+    --input: 220 16% 88%;
+    --ring: 2 100% 44%;
+    --radius: 0.875rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-offwhite text-charcoal antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply text-navy;
+  }
+  
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #0B1F3B 0%, #1F6FEB 100%);
+  }
+  
+  .text-gradient-tango {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #E10600 0%, #FF2D26 100%);
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-xl;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(11, 31, 59, 0.08);
+    box-shadow: 0 4px 24px rgba(11, 31, 59, 0.08);
+  }
+  
+  .glass-card-light {
+    @apply backdrop-blur-md;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(11, 31, 59, 0.06);
+  }
+  
+  .accent-glow {
+    background: radial-gradient(circle, rgba(225, 6, 0, 0.15) 0%, rgba(0, 0, 0, 0) 65%);
+    filter: blur(40px);
+  }
+  
+  .electric-glow {
+    background: radial-gradient(circle, rgba(31, 111, 235, 0.15) 0%, rgba(0, 0, 0, 0) 65%);
+    filter: blur(40px);
+  }
+  
+  .hairline {
+    @apply bg-navy/10;
+  }
+  
+  .nav-blur {
+    @apply backdrop-blur-xl;
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F7FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(11, 31, 59, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(11, 31, 59, 0.3);
+}
+
+/* Selection */
+::selection {
+  background: rgba(225, 6, 0, 0.15);
+  color: #0B1F3B;
+}
