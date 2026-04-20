@@ -4,7 +4,7 @@ import Services from './sections/Services';
 import AutomationSpotlight from './sections/AutomationSpotlight';
 import AISpotlight from './sections/AISpotlight';
 import Process from './sections/Process';
-import Testimonials from './sections/Testimonials';
+// import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
         <Process />
 
         {/* Section 6: Testimonials */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* Section 7: Contact */}
         <Contact />
