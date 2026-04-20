@@ -30,13 +30,6 @@ const AISpotlight = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       ref={sectionRef}
@@ -223,8 +216,8 @@ const AISpotlight = () => {
             </div>
 
             {/* CTA */}
-            <button
-              onClick={scrollToContact}
+            <a
+              href="#contact"
               className={`group inline-flex items-center gap-2 px-6 py-3 bg-navy hover:bg-navy-light text-white text-sm font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
@@ -232,7 +225,7 @@ const AISpotlight = () => {
             >
               Explore AI solutions
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+            </a>
           </div>
         </div>
       </div>
