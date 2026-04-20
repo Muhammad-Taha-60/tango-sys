@@ -10,20 +10,6 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const scrollToServices = () => {
-    const element = document.getElementById('services');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       ref={sectionRef}
@@ -109,20 +95,20 @@ const Hero = () => {
             }`}
             style={{ transitionDelay: '500ms' }}
           >
-            <button
-              onClick={scrollToContact}
+            <a
+              href="#contact"
               className="group flex items-center gap-2 px-8 py-4 bg-tango hover:bg-tango-dark text-white text-base font-medium rounded-full transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5"
             >
               Book a discovery call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
-            <button
-              onClick={scrollToServices}
+            </a>
+            <a
+              href="#services"
               className="group flex items-center gap-2 px-8 py-4 bg-white hover:bg-offwhite-dark text-navy text-base font-medium rounded-full transition-all duration-300 shadow-card hover:shadow-lg hover:-translate-y-0.5 border border-navy/5"
             >
               Explore solutions
               <ChevronDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
-            </button>
+            </a>
           </div>
 
           {/* Stats */}

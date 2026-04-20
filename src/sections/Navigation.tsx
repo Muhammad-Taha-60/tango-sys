@@ -14,12 +14,8 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+  const handleNavClick = () => {
+    setIsMobileMenuOpen(false);
   };
 
   const navLinks = [
@@ -41,8 +37,8 @@ const Navigation = () => {
         <div className="w-full px-6 lg:px-12">
           <div className="flex items-center justify-between h-18 lg:h-20">
             {/* Logo */}
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            <a
+              href="#top"
               className="flex items-center gap-3 group"
             >
               <div className="relative">
@@ -59,30 +55,30 @@ const Navigation = () => {
                   Systems
                 </span>
               </div>
-            </button>
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1 bg-navy/5 rounded-full p-1">
               {navLinks.map((link) => (
-                <button
+                <a
                   key={link.id}
-                  onClick={() => scrollToSection(link.id)}
+                  href={`#${link.id}`}
                   className="px-5 py-2 text-sm text-navy/70 hover:text-navy rounded-full hover:bg-white/60 transition-all duration-300 relative group"
                 >
                   {link.label}
-                </button>
+                </a>
               ))}
             </div>
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href="#contact"
                 className="group flex items-center gap-2 px-5 py-2.5 bg-navy hover:bg-navy-light text-white text-sm font-medium rounded-full transition-all duration-300 hover:shadow-lg"
               >
                 Book a call
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -104,9 +100,10 @@ const Navigation = () => {
       >
         <div className="flex flex-col items-center justify-center h-full gap-6 pt-20">
           {navLinks.map((link, index) => (
-            <button
+            <a
               key={link.id}
-              onClick={() => scrollToSection(link.id)}
+              href={`#${link.id}`}
+              onClick={handleNavClick}
               className={`text-3xl font-heading font-semibold text-navy hover:text-tango transition-all duration-300 ${
                 isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
@@ -115,10 +112,11 @@ const Navigation = () => {
               }}
             >
               {link.label}
-            </button>
+            </a>
           ))}
-          <button
-            onClick={() => scrollToSection('contact')}
+          <a
+            href="#contact"
+            onClick={handleNavClick}
             className={`mt-6 px-8 py-4 bg-tango text-white font-medium rounded-full flex items-center gap-2 transition-all duration-300 ${
               isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
@@ -128,7 +126,7 @@ const Navigation = () => {
           >
             Book a discovery call
             <ChevronRight className="w-5 h-5" />
-          </button>
+          </a>
         </div>
       </div>
     </>
